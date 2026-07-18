@@ -9,3 +9,4 @@ while (nProdutos > 0) {
     console.log(`${nProdutos} produtos restantes`)
 };
 console.log("Produtos Conferidos");
+
