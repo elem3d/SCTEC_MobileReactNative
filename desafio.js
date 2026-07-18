@@ -84,7 +84,7 @@ TODO:
 const prompt = require("prompt-sync")();
 
 
-let continuar = S;
+let continuar = "S";
 
 do{
     console.log(`----- MENU -----
