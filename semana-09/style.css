@@ -1,0 +1,186 @@
+/* ==========================================================
+   VARIÁVEIS GLOBAIS (Troque cores e fontes aqui)
+   ========================================================== */
+:root {
+    --font-principal: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+    /* Paleta Verde Menta / Dark Moderno */
+    --cor-fundo: #0f1715;           /* Fundo da página */
+    --cor-card: #18221f;            /* Fundo do container <main> */
+    --cor-texto: #e2e8f0;           /* Cor do texto principal */
+    --cor-texto-secundario: #94a3b8;/* Texto de apoio/subtítulo */
+    --cor-destaque: #10b981;        /* Verde esmeralda vivo */
+    --cor-rotulos: #6ee7b7;         /* Verde claro para os labels */
+    --cor-input-fundo: #0b110f;     /* Fundo dos campos */
+    --cor-borda: #2d3e38;           /* Bordas suaves */
+    --cor-botao-fundo: #10b981;     /* Fundo do botão */
+    --cor-botao-texto: #061e14;     /* Texto do botão */
+    --cor-botao-hover: #34d399;     /* Hover do botão */
+}
+
+/* ==========================================================
+   RESET E ESTILOS GERAIS
+   ========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-principal);
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+/* ==========================================================
+   CONTAINER PRINCIPAL
+   ========================================================== */
+main {
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 520px;
+    padding: 32px;
+}
+
+h1 {
+    color: var(--cor-destaque);
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 6px;
+}
+
+p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+/* ==========================================================
+   FORMULÁRIO E ELEMENTOS DIRETOS
+   ========================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels diretos do formulário */
+form > label {
+    font-size: 0.85rem;
+    color: var(--cor-rotulos);
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+/* Campos de entrada e seleção */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--cor-input-fundo);
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    outline: none;
+    margin-bottom: 16px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Ícone do calendário */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.8);
+    cursor: pointer;
+}
+
+/* Estados de foco */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* ==========================================================
+   FIELDSETS (Radio e Checkbox)
+   ========================================================== */
+fieldset {
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+legend {
+    color: var(--cor-rotulos);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0 6px;
+}
+
+/* Labels internos para opções (radio/checkbox) */
+fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    cursor: pointer;
+    font-weight: 400;
+}
+
+fieldset input[type="radio"],
+fieldset input[type="checkbox"] {
+    accent-color: var(--cor-destaque);
+    cursor: pointer;
+}
+
+/* Textarea redimensionável apenas na vertical */
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================
+   BOTÃO DE ENVIO
+   ========================================================== */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--cor-botao-fundo);
+    color: var(--cor-botao-texto);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--cor-botao-hover);
+}
+
+button[type="submit"]:active {
+    transform: scale(0.99);
+}
