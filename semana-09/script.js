@@ -3,12 +3,12 @@ const form = document.getElementById("formularioDeInscricao");
 const resumo = document.createElement("section");
 resumo.id ="resumo";
 
-formulario.arter(resumo);
+form.after(resumo);
 
 form.addEventListener("submit", function(event){
     event.preventDefault();
 
-    
+
     const interessesInput = []
     document.querySelectorAll('input[name = "temas"]:checked').forEach(tema => {interessesInput.push(tema.value);});
 
@@ -26,6 +26,15 @@ form.addEventListener("submit", function(event){
         areasDeInteresse: interessesInput
     }
 
-    resumo.innerHTML = "<h2>Resumo de Inscrição:<h2/>"
+    resumo.innerHTML = `<h2>Resumo da Inscrição: ${dadosDoInscrito.nome}</h2>
+        <p><strong>Nome Completo:</strong> ${dadosDoInscrito.nome}</p>
+        <p><strong>E-mail:</strong> ${dadosDoInscrito.email}</p>
+        <p><strong>Senha:</strong> ${dadosDoInscrito.senha}</p>
+        <p><strong>Idade:</strong> ${dadosDoInscrito.idade}</p>
+        <p><strong>Data de nascimento:</strong> ${dadosDoInscrito.nascimento}</p>
+        <p><strong>Trilha:</strong> ${dadosDoInscrito.trilha}</p>
+        <p><strong>Nível:</strong> ${dadosDoInscrito.nivel}</p>
+        <p><strong>Temas:</strong> ${dadosDoInscrito.temas.length > 0 ? dadosDoInscrito.temas.join(", ") : "Nenhum Informado"}</p>
+        <p><strong>Apresentação:</strong> ${dadosDoInscrito.apresentacao || "Nenhum Informada"}</p>`;
 });
 
