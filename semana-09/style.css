@@ -184,3 +184,14 @@ button[type="submit"]:hover {
 button[type="submit"]:active {
     transform: scale(0.99);
 }
+
+inputErro {
+    border: 2px solid red;
+    background-color: #f6c3c3;
+}
+
+mensagem-erro{
+    color: red;
+    font-size: small;
+    font-weight: 300;
+}
